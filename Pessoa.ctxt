@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Pessoa
+comment1.params=n
+comment1.target=Pessoa(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getNome()
+comment3.params=t
+comment3.target=void\ compraTeleSena(TeleSena)
+comment4.params=
+comment4.target=double\ getValorVenda()
+comment5.params=
+comment5.target=int\ getQtTS()
+comment6.params=
+comment6.target=void\ imprime()
+numComments=7

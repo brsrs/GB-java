@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=TeleSena
+comment1.params=
+comment1.target=TeleSena()
+comment2.params=
+comment2.target=int[]\ criaNumTeleSena()
+comment3.params=
+comment3.target=double\ getValorVenda()
+comment4.params=
+comment4.target=void\ imprimeTeleSena()
+numComments=5
