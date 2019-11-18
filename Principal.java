@@ -1,24 +1,24 @@
 public class Principal
 {
     public static void main (String[] args){
-        int qntTS = 0;
+        int qntTS = 0; // quantidade de TS comprada por cada pessoa
         ControleTeleSena cT = new ControleTeleSena();
         //testando com 3 pessoas a compra de telesena e impressão de total de venda e valortotal na classe de controle
-        for (int i = 0; i <= 2; i++){
+        for (int i = 0; i < 2; i++){
             Pessoa p = new Pessoa(sorteiaNome());
-            qntTS = (int)(Math.random() * 3 + 1);
+            qntTS = (int)(Math.random() * 15 + 1);
             cT.adicionaPessoa(p);
             for (int j = 0; j < qntTS; j++){
                 TeleSena ts = new TeleSena();
-                p.compraTeleSena(ts);                
+                p.compraTeleSena(ts);
             }
             p.imprime();
         }
-        
-        cT.gerenciaVendaTS();        
-        
+
+        cT.gerenciaQtVendaTS();        
+        cT.sorteioTeleSena();  
     }
-    
+
     // função que cria nomes aleatórios para as pessoas
     public static String sorteiaNome(){
         String[] pre = {"Pe","Bru","Ro","Gui","Leo","Car","Fe","Fer","Ana","Ane","Ju","Juli","Jef"};
@@ -34,5 +34,5 @@ public class Principal
         }
         return nome;
     }
-   
+
 }

@@ -3,9 +3,9 @@ public class TeleSena
     private double valorVenda;
     private int[] numC1;
     private int[] numC2;
-
+        
     public TeleSena(){
-        //inicia o valor com 10 pois é sempre o mesmo;
+        //inicia o valor com 10 pois é sempre o mesmo
         this.valorVenda = 10;
         //instancia o tamanho dos arrays de números
         this.numC1 = new int[25];
@@ -13,7 +13,6 @@ public class TeleSena
         //preenche os arrays de 1 a 60 sem repetir com a funcão
         this.numC1 = criaNumTeleSena();
         this.numC2 = criaNumTeleSena();
-
     }
 
     public int[] criaNumTeleSena(){
@@ -45,7 +44,15 @@ public class TeleSena
     public double getValorVenda(){
         return this.valorVenda;
     }
-      
+    
+    //método que retorna a telesena de acordo com o parâmetro passado (1 ou 2)
+    public int[] getTelesena(int n){
+        if (n == 1){
+            return this.numC1;
+        }else{
+            return this.numC2;
+        }
+    }    
     
     // método para teste
     public void imprimeTeleSena(){
