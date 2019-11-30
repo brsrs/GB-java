@@ -3,6 +3,8 @@ public class TeleSena
     private double valorVenda;
     private int[] numC1;
     private int[] numC2;
+    private int acerto1;
+    private int acerto2;
         
     public TeleSena(){
         //inicia o valor com 10 pois é sempre o mesmo
@@ -13,6 +15,8 @@ public class TeleSena
         //preenche os arrays de 1 a 60 sem repetir com a funcão
         this.numC1 = criaNumTeleSena();
         this.numC2 = criaNumTeleSena();
+        this.acerto1 = 0;
+        this.acerto2 = 0;
     }
 
     public int[] criaNumTeleSena(){
@@ -45,6 +49,22 @@ public class TeleSena
         return this.valorVenda;
     }
     
+    public int getAcertoC1(){
+        return this.acerto1;
+    }
+    
+    public int getAcertoC2(){
+        return this.acerto2;
+    }
+    
+    public void acertoC1(){
+        this.acerto1 += 1;
+    }
+    
+    public void acertoC2(){
+        this.acerto2 += 1;
+    }
+    
     //método que retorna a telesena de acordo com o parâmetro passado (1 ou 2)
     public int[] getTelesena(int n){
         if (n == 1){
@@ -52,24 +72,5 @@ public class TeleSena
         }else{
             return this.numC2;
         }
-    }    
-    
-    // método para teste
-    public void imprimeTeleSena(){
-        for (int i = 0; i < this.numC1.length; i++){
-            System.out.print(this.numC1[i]);
-            if (i < this.numC1.length-1){
-                System.out.print(", ");
-            }
-        }
-        System.out.print("\n");
-
-        for (int i = 0; i < this.numC2.length; i++){
-            System.out.print(this.numC2[i]);
-            if (i < this.numC2.length-1){
-                System.out.print(", ");
-            }
-        }
-        System.out.print("\n");
-    }
+    }       
 }

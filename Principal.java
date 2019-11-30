@@ -1,10 +1,16 @@
 public class Principal
 {
     public static void main (String[] args){
+        System.out.println("------------------------------ Sorteio da Tele-Sena 2019 ------------------------------" + "\n");
+        try {
+            Thread.sleep(2500);
+        } catch (Exception e) {}
+        
         int qntTS = 0; // quantidade de TS comprada por cada pessoa
         ControleTeleSena cT = new ControleTeleSena();
-        //testando com 3 pessoas a compra de telesena e impressão de total de venda e valortotal na classe de controle
-        for (int i = 0; i < 2; i++){
+        
+        //Cria pessoas e telesenas aleatórias
+        for (int i = 0; i < 25; i++){
             Pessoa p = new Pessoa(sorteiaNome());
             qntTS = (int)(Math.random() * 15 + 1);
             cT.adicionaPessoa(p);
@@ -12,11 +18,14 @@ public class Principal
                 TeleSena ts = new TeleSena();
                 p.compraTeleSena(ts);
             }
-            p.imprime();
+            
         }
-
-        cT.gerenciaQtVendaTS();        
-        cT.sorteioTeleSena();  
+           
+        int[] numSorteados = cT.sorteioTeleSena();
+        cT.checaAcertos(numSorteados);
+        cT.imprimeInfosFinais();
+        
+        System.out.println("-------------------------- Fim do Sorteio da Tele-Sena 2019 ---------------------------" + "\n");
     }
 
     // função que cria nomes aleatórios para as pessoas
@@ -26,7 +35,6 @@ public class Principal
         String[] fim = {"dro","no","drigo","rigo","lherme","los","lipe","nando","nanda","na","lia","lara","ana","erson","lota","olina","sana"};
         int numPre = 0;
         int numFim = 0;
-
         for (int i = 0; i < 1; i++){
             numPre = (int)(Math.random() * 12 + 0); //gera um número aleatório de 0 a 12 correspondente ao início do nome
             numFim = (int)(Math.random() * 16 + 0); //gera um número aleatório de 0 a 16 correspondente ao fim do nome
